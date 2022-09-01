@@ -1,42 +1,44 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+import React from 'react';
+import CartWidget from './CartWidget';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-const NavBar = () => {
-    return (
-        <div class="cointainer-fluid">
-            <nav class="navbar fixed-top">
-                <div class="container-fluid">
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                        aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/pages/tienda.html">Tienda</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/pages/encontranos.html">Encontranos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/pages/acercanosotros.html">Acerca De Nosotros</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/pages/contacto.html">Contacto</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
-                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Iniciar Sesion
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
 
-                </div>
-            </nav>
+const NavBar = ({ background }) => {
+  const brand =
+    'https://scontent.faep22-1.fna.fbcdn.net/v/t39.30808-6/300162810_443399537804634_8002622939770125811_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=NhGhrN8nE7kAX9ixRws&_nc_oc=AQk4iJbtNlI-D5Ra18jVaxcRY1vOWVQwMcnfJcArhXpKZAVhZGmAgaoQc3bPQN15J9M&_nc_ht=scontent.faep22-1.fna&oh=00_AT-os9jmm4YLhQJbGoG5upV7C64uBf8x6FnADWABSAFBQg&oe=63168DDD';
+  return (
+    <header className={`header background--${background}`}>
+
+      <div className="header-container">
+
+        <div className="menu-button">
+          <FontAwesomeIcon icon={faBars} size="lg" color="white" />
+          <span>Menu</span>
         </div>
-    )
-}
+        <nav>
+          <ul className="nav-container">
+            <li>
+              <a href="/">Inicio</a>
+            </li>
+            <li className="products-item">
+              <a href="/">
+                Productos <span className="arrow"></span>
+              </a>
+            </li>
+            <li>
+              <a href="/">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div className="logo-container">
+          <img src={brand} alt="logo" />
+        </div>
+        <CartWidget />
+      </div>
+    </header>
+  );
+};
+
 export default NavBar;
