@@ -3,7 +3,7 @@ import CartWidget from './CartWidget';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-/* import '//NavBar.css'; */
+
 
 const NavBar = ({ background }) => {
   const brand =
@@ -24,11 +24,8 @@ const NavBar = ({ background }) => {
             </li>
             <li className="products-item">
               <a href="/">
-                Productos <span className="arrow"></span>
+                Productos
               </a>
-            </li>
-            <li>
-              <a href="/">Blog</a>
             </li>
             <li>
               <a href="/">Contacto</a>

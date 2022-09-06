@@ -1,6 +1,5 @@
 import React from 'react';
-/* 
-import './/Hero.css'; */
+
 
 const Hero = ({ title }) => {
 
@@ -13,7 +12,6 @@ const Hero = ({ title }) => {
             ¡La mente muy clara y la cerveza muy fría! Vení a conocer las
             mejores cervezas del inframundo.
           </p>
-          <button className="button-primary">Comprar</button>
         </article>
       </div>
     </section>
