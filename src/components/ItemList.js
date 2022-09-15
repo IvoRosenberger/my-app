@@ -1,27 +1,13 @@
-const request = {
-    status: '200',
+import Item from "./Item"
+
+const ItemList = ({ lista }) => {
+    return (
+        <div>
+            {lista.map((product) => (
+                <Item title={product.title} price={product.price} image={product.image} />
+            ))}
+        </div>
+    );
 };
 
-const promesa = new Promise((res, rej) => {
-    if (request.status === '200') {
-        setTimeout(() => {
-            res({
-                id: '1',
-                title: 'Cream Ale',
-                description: 'Rubia suave',
-                price: '320',
-                pictureUrl: '',
-
-            });
-        }, 2000);
-
-    } else {
-        rej('F');
-    })
-    .then((response) => {
-        console.log(response);
-    })
-    .catch((error) => {
-        console.log(error);
-    })
-
+export default ItemList;

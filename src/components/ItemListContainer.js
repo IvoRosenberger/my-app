@@ -1,12 +1,30 @@
-import React from 'react';
-class Hello extends React.Component {
-    render() {
-        return (
-            <div>
-                <h1>Holis</h1>
-            </div>
-        );
-    }
-}
+import data from './ItemList';
+import { useEffect, useState } from 'react';
+import ItemList from '../components/ItemList'
 
-export default Hello;
+const ItemListContainer = ({ greeting }) => {
+    const [productList, setProductList] = useState([])
+
+
+    useEffect(() => {
+        getProducts.then((response) => {
+            setProductList(response);
+        });
+    }, [])
+
+    const getProducts = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(data);
+        }, 2000);
+    });
+    return (
+        <>
+            <ItemList />
+        </>
+    );
+};
+
+export default ItemListContainer;
+
+
+
