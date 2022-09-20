@@ -14,7 +14,7 @@ export default function App() {
         <Route path='/' element={<ItemListContainer />} />
         <Route path='category/:id' element={<ItemListContainer/>} />
       </Routes>
-      <Hero title="El Rey de la Birra" />
+      <Hero title="La casa de la lepra" />
       <ItemListContainer />
       <Contador />
     </BrowserRouter>

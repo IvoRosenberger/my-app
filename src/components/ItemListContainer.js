@@ -19,7 +19,7 @@ const ItemListContainer = ({ greeting }) => {
     });
     return (
         <>
-            <ItemList />
+            <ItemList lista={productList} />
         </>
     );
 };
