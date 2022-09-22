@@ -13,7 +13,6 @@ function ItemCount({ stock, initial, onAdd, clase, clase2, item, setCompraTermin
           onClick={() => cantidad <= 1 ? setCantidad(cantidad) : setCantidad(cantidad - 1)}>
         </button>
         <section className={`${clase}centro`}>
-
           <p>{stock <= 0 ? "0" : cantidad}</p>
 
           <button className={stock <= 0 ?
