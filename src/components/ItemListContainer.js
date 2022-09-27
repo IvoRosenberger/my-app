@@ -1,30 +1,14 @@
-import data from './ItemList';
-import { useEffect, useState } from 'react';
-import ItemList from '../components/ItemList'
+import React  from 'react'
+import ItemList from './ItemList'
 
-const ItemListContainer = ({ greeting }) => {
-    const [productList, setProductList] = useState([])
+function ItemListContainer({data,filtro}) {
 
-
-    useEffect(() => {
-        getProducts.then((response) => {
-            setProductList(response);
-        });
-    }, [])
-
-    const getProducts = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(data);
-        }, 2000);
-    });
     return (
-        <>
-            <ItemList lista={productList} />
-        </>
-    );
-};
+        <div>
+            <ItemList mostrando={data} filtro={filtro}/>
+        </div>
+    )
+}
 
-export default ItemListContainer;
-
-
+export default ItemListContainer
 

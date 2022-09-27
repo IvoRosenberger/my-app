@@ -1,13 +1,23 @@
-import Item from "./Item"
+import React from 'react'
+import {CarritoConsumer} from '../context/CarritoProvider';
 
-const ItemList = ({ lista }) => {
+import Item from './Item'
+import Spinner from '../UI/Spinner';
+
+function ItemList({mostrando}) {
+    const {addItem}=CarritoConsumer();
     return (
-        <div>
-            {lista.map((product) => (
-                <Item title={product.title} price={product.price} image={product.image} />
-            ))}
-        </div>
-    );
-};
+        <div className="ItemList">
 
-export default ItemList;
+            {mostrando? mostrando.map((camiseta)=>(
+                <Item key={camiseta.id}
+                    clase="catalogo"
+                    camiseta={camiseta}
+                    onAdd={addItem}/>))
+                    
+                :<Spinner/>}
+        </div>
+    )
+}
+
+export default ItemList

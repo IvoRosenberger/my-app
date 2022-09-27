@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Spinner from '../UI/Spinner'
+import Spinner from '../UI/Spinner';
 
-function Item({ camiseta, clase, onAdd, removeOneItem, addOneItem, }) {
-    const item = camiseta
-
+function Item({camiseta, clase, onAdd, removeOneItem, addOneItem, }) {
+    const item=camiseta
+    
     return (
         <div className={clase}>
-            {item.img ? <img src={item.img[0]} alt="camiseta en venta" /> : <Spinner />}
-
+            {item.img?<img src={item.img[0]} alt="camiseta en venta"/>:<Spinner/>}
+            
             <section className={`${clase}detalles`}>
                 <section className={`${clase}principal`}>
                     <section className={`${clase}titulo`}>
@@ -24,17 +24,28 @@ function Item({ camiseta, clase, onAdd, removeOneItem, addOneItem, }) {
                 <section className={`${clase}Precios`}>
                     <p >STOCK: {item.stock}</p>
                     <p>CANTIDAD: {item.cantidad}</p>
-                    <p>TOTAL: $ {item.precio * item.cantidad} USD</p>
+                    <p>TOTAL: $ {item.precio*item.cantidad} USD</p>
                 </section>
-                <section className={`${clase}AgregarQuitar`}>
-                    <p>MODIFICAR CANTIDAD</p>
-                    <section className='botones'>
-                        <button onClick={() => removeOneItem(item, item.id)} className='quitar'>REMOVER</button>
-                        <button onClick={() => addOneItem(item, item.id)} className='agregar'>AGREGAR</button>
-                    </section>
+            <section className={`${clase}AgregarQuitar`}>
+                <p>MODIFICAR CANTIDAD</p>
+                <section className='botones'>
+                    <button onClick={()=>removeOneItem(item,item.id)} className='quitar'>REMOVER</button>
+                    <button onClick={()=>addOneItem(item,item.id)} className='agregar'>AGREGAR</button>
                 </section>
             </section>
+            </section>
+            
 
+
+
+            <section className={`${clase}loInteresante`}>
+                
+                <Link className={`${clase}linkazo`} to={`/item/${item.id}`}>
+                    <button className={`${clase}botonazo`}>
+                        Detalles..
+                    </button>
+                </Link>
+            </section>
         </div>
     )
 }
