@@ -3,7 +3,7 @@ import Menu from '../UI/Menu'
 import Cerrar from '../imagenes/cerrar.png'
 import Carrito from '../UI/Carrito'
 import{Link, NavLink} from 'react-router-dom'
-import { CarritoConsumer } from '../context/carritoProvider'
+import { CarritoConsumer } from '../context/CarritoProvider'
 
 
 
@@ -63,8 +63,6 @@ function NavBar() {
                         DEPORTES 
                         <ul onClick={()=>setMostrarNav("esconderNav")}>
                             <li><NavLink to="/category/Futbol">Futbol</NavLink></li>
-                            <li><NavLink to="/category/Rugby">Rugby</NavLink></li>
-                            <li><NavLink to="/category/Basquetball">Basquetball</NavLink></li>
                         </ul>
                     </li>
                     <li className="opcionNavegacion">

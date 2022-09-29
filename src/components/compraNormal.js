@@ -1,6 +1,5 @@
 import {CarritoConsumer} from '../context/CarritoProvider';
 import Item from './Item'
-import '../styles/Cart.css' 
 
 function CompraNormal() {
     const {carrito,removeOneItem, addOneItem, mensajeError}=CarritoConsumer()

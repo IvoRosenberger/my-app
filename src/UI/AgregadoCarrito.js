@@ -1,5 +1,5 @@
 import React from 'react'
-import {CarritoConsumer} from '../context/carritoProvider'
+import {CarritoConsumer} from '../context/CarritoProvider'
 
 function AgregadoCarrito() {
     const {itemTemporal,setItemTemporal}=CarritoConsumer()

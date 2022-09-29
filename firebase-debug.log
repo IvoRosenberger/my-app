@@ -1,0 +1,29 @@
+[debug] [2022-09-29T17:19:01.179Z] ----------------------------------------------------------------------
+[debug] [2022-09-29T17:19:01.182Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ivoro\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-09-29T17:19:01.183Z] CLI Version:   11.11.0
+[debug] [2022-09-29T17:19:01.183Z] Platform:      win32
+[debug] [2022-09-29T17:19:01.183Z] Node Version:  v16.14.2
+[debug] [2022-09-29T17:19:01.185Z] Time:          Thu Sep 29 2022 14:19:01 GMT-0300 (hora estándar de Argentina)
+[debug] [2022-09-29T17:19:01.185Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-29T17:19:01.200Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-29T17:19:01.200Z] > authorizing via signed-in user (ivorosenberger@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\ivoro\OneDrive\Escritorio\Coder House\Coder-react\my-app
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 

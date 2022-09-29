@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Spinner from '../UI/Spinner';
+import CarritoProvider from '../context/CarritoProvider';
 
 function Item({camiseta, clase, onAdd, removeOneItem, addOneItem, }) {
     const item=camiseta
@@ -45,6 +46,7 @@ function Item({camiseta, clase, onAdd, removeOneItem, addOneItem, }) {
                         Detalles..
                     </button>
                 </Link>
+                {/* <ItemCount stock={item.stock} item={item} onAdd={onAdd} clase="normal"initial="1"/> */}
             </section>
         </div>
     )

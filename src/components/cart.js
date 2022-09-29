@@ -1,7 +1,8 @@
 import React from 'react'
 import {CarritoConsumer} from '../context/CarritoProvider';
-import CompraVacia from '../components/CompraVacia'
-import CompraNormal from './CompraNormal';
+import CompraVacia from './compraVacia'
+import CompraNormal from './compraNormal';
+
 
 
 function Cart() {
