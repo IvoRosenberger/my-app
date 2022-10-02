@@ -48,7 +48,7 @@ function NavBar() {
 
     return (
         <nav className={claseDeNav}>
-            <Link to="/"><h2>LaCasaca</h2></Link>
+            <Link to="/"><h2>La Lepra</h2></Link>
 
             <section className={`opciones ${mostrarNav}`} id="opciones">
                 <button className="botonCerrar" onClick={()=>setMostrarNav("esconderNav")}>

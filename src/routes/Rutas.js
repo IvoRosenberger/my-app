@@ -7,7 +7,7 @@ import Catalogo from '../views/Catalogo'
 import CarritoProvider from '../context/CarritoProvider'
 import Carrito from '../views/Carrito'
 
-function Rutas({data,tickets}) {
+function Rutas({data}) {
     return (
         <BrowserRouter>
             <CarritoProvider>

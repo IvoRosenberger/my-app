@@ -1,39 +1,83 @@
-// Import the functions you need from the SDKs you need
-
-import { initializeApp } from "firebase/app";
-
-import { getAnalytics } from "firebase/analytics";
-
-// TODO: Add SDKs for Firebase products that you want to use
-
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { useState } from 'react'
+import{addDoc, collection, getDocs, getDoc, doc} from "firebase/firestore"
+import db from "../service"
+import { initializeApp } from 'firebase/app';
 
 
-// Your web app's Firebase configuration
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-const firebaseConfig = {
-
-  apiKey: "AIzaSyD3m4jkLmqzComfbx3pkU0crTcu9vboCIc",
-
-  authDomain: "la-lepra.firebaseapp.com",
-
-  projectId: "la-lepra",
-
-  storageBucket: "la-lepra.appspot.com",
-
-  messagingSenderId: "128405705978",
-
-  appId: "1:128405705978:web:2ad888daa1d8b51bbb2543",
-
-  measurementId: "G-3P8JPE4VJZ"
-
-};
+function useFirebase() {
+    const [producto, setProducto]=useState({})
+    const [productos, setProductos]=useState([])
+    
+    //BUSCA UNA COLECCION
+    const fetchGetDataCollection=async()=>{
+        try{
+            const data=collection(db,"items");
+            const col=await getDocs(data)
+            const response= col.docs.map(doc=>(
+                ({id:doc.id, ...doc.data()}))
+                )
+            setProductos(response)
+        } catch(error){
+            console.log(error)
+        }
+    }
 
 
-// Initialize Firebase
+    //BUSCA UN ELEMENTO POR ID
+    const fetchGetIndividualProduct= async (id)=>{
+        try{
+            const document= doc(db,"items",id)
+            const response= await getDoc(document)
+            let result=response.data()
+            setProducto({id:response.id,...result})
+        }
+        catch (error){
+            console.log(error)
+        }
+    }
 
-const app = initializeApp(firebaseConfig);
+    //GENERA UN TICKET
+    const fetchGenerateTicket= async (datos)=>{
+    let orden=""
+        try{
+            const col=collection(db,"ordenes")
+            const order= await addDoc(col,datos)
+            orden=order.id
+            return orden
+        } catch (error){
+        }
 
-const analytics = getAnalytics(app);
+        }
+
+    const fetchGetIndividualTicket= async (id)=>{
+        try{
+            const document= doc(db,"ordenes",id)
+            const response= await getDoc(document)
+            let result=response.data()
+            setProducto({id:response.id,...result})
+        }
+        catch (error){
+            console.log(error)
+        }
+    }
+    
+    return {
+
+        producto,
+        productos,
+        fetchGenerateTicket,
+        fetchGetDataCollection,
+        fetchGetIndividualTicket,
+        fetchGetIndividualProduct
+    }
+}
+
+
+
+
+
+
+
+
+export default useFirebase
