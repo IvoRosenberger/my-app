@@ -1,6 +1,6 @@
 import ItemCount from './ItemCount'
 import TerminarCompra from './TerminarCompra';
-import {CarritoConsumer} from '../context/CarritoProvider'
+import {CarritoConsumer} from '../context/CarritoProvider';
 import { useState } from 'react';
 import Spinner from '../UI/Spinner';
 
@@ -25,6 +25,10 @@ function ItemDetail({item}) {
                 <h6 className="detallePrecio">Incluye envio dentro del área</h6>
             </section>
             <section className="detallesMenores">
+                <p><span>Marca:</span> {item.marca}</p>
+                <p><span>Tipo:</span> {item.indumentaria}</p>
+                <p><span>Deporte:</span> {item.deporte}</p>
+                <p><span>Torneo:</span> {item.torneo}</p>
                 <p><span>Stock:</span> {item.stock}</p>
                 <p className="descripcion">{item.descripcion}</p>
             </section>

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Spinner from '../UI/Spinner';
-import CarritoProvider from '../context/CarritoProvider';
 
 function Item({camiseta, clase, onAdd, removeOneItem, addOneItem, }) {
     const item=camiseta

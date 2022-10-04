@@ -48,7 +48,7 @@ function NavBar() {
 
     return (
         <nav className={claseDeNav}>
-            <Link to="/"><h2>La Lepra</h2></Link>
+            <Link to="/"><h2>LaCasaca</h2></Link>
 
             <section className={`opciones ${mostrarNav}`} id="opciones">
                 <button className="botonCerrar" onClick={()=>setMostrarNav("esconderNav")}>
@@ -63,6 +63,8 @@ function NavBar() {
                         DEPORTES 
                         <ul onClick={()=>setMostrarNav("esconderNav")}>
                             <li><NavLink to="/category/Futbol">Futbol</NavLink></li>
+                            <li><NavLink to="/category/Rugby">Rugby</NavLink></li>
+                            <li><NavLink to="/category/Basquetball">Basquetball</NavLink></li>
                         </ul>
                     </li>
                     <li className="opcionNavegacion">
@@ -97,3 +99,4 @@ function NavBar() {
 }
 
 export default NavBar
+

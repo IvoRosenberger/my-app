@@ -1,7 +1,7 @@
 import React from 'react'
 import {CarritoConsumer} from '../context/CarritoProvider';
-import CompraVacia from './compraVacia'
-import CompraNormal from './compraNormal';
+import CompraVacia from './CompraVacia'
+import CompraNormal from './CompraNormal';
 
 
 

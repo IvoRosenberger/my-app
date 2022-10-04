@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
-import useFirebase from '../hooks/useFirebase';
-
+import useFirebase from '../hooks/UseFirebase';
 
 
 function ItemDetailContainer() {

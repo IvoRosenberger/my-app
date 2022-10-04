@@ -1,7 +1,7 @@
-import './App.css';
+
 import Rutas from './routes/Rutas';
 import React, { useEffect} from 'react'
-import useFirebase from './hooks/useFirebase';
+import useFirebase from './hooks/UseFirebase';
 function App() {
     const {productos, fetchGetDataCollection}= useFirebase()
     useEffect(()=>{
@@ -19,3 +19,4 @@ function App() {
 }
 
 export default App;
+

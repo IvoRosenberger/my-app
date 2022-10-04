@@ -1,7 +1,10 @@
+import React, { useState } from 'react'
 import {CarritoConsumer} from '../context/CarritoProvider';
 import Item from './Item'
+import Formulario from './Formulario';
 
 function CompraNormal() {
+    const[orden, setOrden]=useState()
     const {carrito,removeOneItem, addOneItem, mensajeError}=CarritoConsumer()
     return (
         <section className='compraContainer'>
@@ -21,6 +24,8 @@ function CompraNormal() {
                         })}
                     </div>
                     }
+
+            <Formulario orden={orden} setOrden={setOrden}/>
         </section>
     )
 }

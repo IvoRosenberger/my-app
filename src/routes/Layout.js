@@ -6,7 +6,6 @@ function Layout({carrito}) {
         <>
             <NavBar carrito={carrito}/>  
             <Outlet/>
-
         </>
     )
 }
